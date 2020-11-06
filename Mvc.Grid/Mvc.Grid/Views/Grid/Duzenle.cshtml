@@ -1,0 +1,41 @@
+﻿@model Mvc.Grid.Models.Personel
+@{
+    ViewBag.Title = "Duzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Duzenle</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_soyad"><i class="glyphicon glyphicon-user"></i></span>
+        @Html.TextBoxFor(m => m.Ad, new { @class = "form_control", placeholder = "Adını Giriniz", aria_describedy = "txt_ad" })
+    </div>
+    <br />
+
+
+
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_soyad"><i class="glyphicon glyphicon-user"></i></span>
+        @Html.TextBoxFor(m => m.Soyad, new { @class = "form_control", placeholder = "Soyadını Giriniz", aria_describedy = "txt_soyad" })
+    </div>
+    <br />
+
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_yas"><i class="glyphicon glyphicon-time"></i></span>
+        @Html.TextBoxFor(m => m.Yas, new { @class = "form_control", placeholder = "Yaşını Giriniz", aria_describedy = "txt_yas" })
+    </div>
+    <br />
+
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_ulke"><i class="glyphicon glyphicon-globe"></i></span>
+        @Html.DropDownListFor(m => m.Ulke.Id, (List<SelectListItem>)ViewBag.Ulkeler, new { @class = "form_control", aria_describedy = "txt_ulke" })
+    </div>
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Kaydet" />
+    @Html.HiddenFor(m=>m.Id)
+
+}
