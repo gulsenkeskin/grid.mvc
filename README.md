@@ -1,2 +1,1 @@
-# GridMvc
-Entity Framework Code First ile database işlemleri ve grid.MVC kullanımı
+Entity Framework Code First ile database işlemleri ve grid.mvc kullanımı
